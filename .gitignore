@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.ipynb_checkpoints/
+frontend/node_modules/
+frontend/dist/
+data/raw/*
+data/processed/*
+data/generated/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/generated/.gitkeep

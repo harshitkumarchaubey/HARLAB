@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: harlab
+Version: 0.1.0
+Summary: Quantitative market research laboratory
+Requires-Python: >=3.10
