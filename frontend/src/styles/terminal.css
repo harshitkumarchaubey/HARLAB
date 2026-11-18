@@ -397,15 +397,159 @@ textarea {
   color: var(--ink-secondary);
 }
 
-@media (max-width: 900px) {
+/* Fluid typography & overflow safety across all screens */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.kpi-value {
+  font-size: clamp(16px, 1.5vw, 22px);
+  word-break: break-word;
+}
+
+/* Tablets & Small Laptops (<= 1024px): compact horizontal nav bar */
+@media (max-width: 1024px) {
   .app-shell {
     grid-template-columns: 1fr;
   }
+
   .sidebar {
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
+    padding: 12px 14px;
+    gap: 10px;
   }
+
+  .brand-block {
+    padding: 0 0 8px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-btn {
+    white-space: nowrap;
+    flex: 0 0 auto;
+    padding: 8px 12px;
+  }
+
+  .sidebar > .muted {
+    display: none;
+  }
+
   .grid-2 {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Phones (<= 640px): touch-friendly controls & compact spacing */
+@media (max-width: 640px) {
+  body {
+    font-size: 13px;
+  }
+
+  .topbar {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .content {
+    padding: 12px 12px 24px;
+    gap: 12px;
+  }
+
+  .panel {
+    padding: 12px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  select,
+  input {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .ladder-row {
+    grid-template-columns: 76px 64px 1fr;
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Smart Boards, Projectors & 4K Displays (>= 1800px) */
+@media (min-width: 1800px) {
+  body {
+    font-size: 17px;
+  }
+
+  .app-shell {
+    grid-template-columns: 300px 1fr;
+  }
+
+  .content {
+    max-width: 1960px;
+    padding: 28px 36px 48px;
+    gap: 24px;
+  }
+
+  .panel {
+    padding: 22px 24px;
+  }
+
+  .panel-title {
+    font-size: 18px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .kpi-label {
+    font-size: 13px;
+  }
+
+  .kpi-value {
+    font-size: 26px;
+  }
+
+  .nav-btn,
+  .btn,
+  select,
+  input,
+  textarea {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  th,
+  td {
+    font-size: 15px;
+    padding: 10px 14px;
   }
 }
