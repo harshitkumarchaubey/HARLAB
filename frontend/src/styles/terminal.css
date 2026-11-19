@@ -631,3 +631,46 @@ input[type="checkbox"] {
     gap: 6px;
   }
 }
+/* Monochrome box styling: remove colored fills inside buttons, banners & badges */
+.btn,
+.btn-secondary,
+.btn-danger,
+.warn-banner,
+.error-banner,
+.badge,
+.badge-synthetic,
+.badge-info,
+.badge-ok,
+.badge-err {
+  background: var(--bg-canvas) !important;
+  border: 1px solid var(--border-strong) !important;
+}
+
+.btn,
+.btn-secondary,
+.badge,
+.badge-synthetic,
+.badge-info,
+.warn-banner {
+  color: var(--ink-primary) !important;
+}
+
+.btn:hover,
+.btn-secondary:hover,
+.btn-danger:hover {
+  background: var(--bg-elevated) !important;
+}
+
+.btn-danger,
+.error-banner,
+.badge-err {
+  color: var(--ask-red) !important;
+}
+
+.badge-ok {
+  color: #56d364 !important;
+}
+
+[data-theme="light"] .badge-ok {
+  color: #1a7f37 !important;
+}
